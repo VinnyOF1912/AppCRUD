@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-button slot="end" (click)="fecharModal()" color="success">Fechar</ion-button>
+    <ion-title>{{atualizar? 'Editar Cliente' : 'Cadastrar Cliente'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="enviarFormulario(f)">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)] ="dadosCliente.nome" name = "nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input [(ngModel)] ="dadosCliente.telefone" name = "telefone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Endereço</ion-label>
+      <ion-input [(ngModel)] ="dadosCliente.endereco" name = "endereco"></ion-input>
+    </ion-item>
+    <ion-button fill="outline" expand="block"b type="submit">{{atualizar? 'Editar' : 'Cadastrar'}}</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-button slot="end" (click)="novoProduto()">Novo Produto</ion-button>
+    <ion-title>Pagina de Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let produto of produtos">
+      <ion-item-options>
+        <ion-item-option color="danger" (click)="remover(produto.id)">Excluir</ion-item-option>
+        <ion-item-option color="success" (click)="atualizar(produto)">Editar</ion-item-option>
+      </ion-item-options>
+      <ion-item>{{produto.descricao}}</ion-item>
+    </ion-item-sliding>
+  </ion-list>
